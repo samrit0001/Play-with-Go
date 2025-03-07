@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "/authproto";
+
+service Security{
+    rpc Login(LoginRequest) returns (LoginResponse);
+    rpc Logout(LogoutRequest) returns (Logoutresponse);
+}
+
+message LoginRequest{
+    string username = 1;
+    string password = 2;
+}
+
+message LoginResponse{
+    string message = 1;
+}
+
+message LogoutRequest{
+    string username = 1;
+}
+
+message Logoutresponse{
+    string message=1;
+}

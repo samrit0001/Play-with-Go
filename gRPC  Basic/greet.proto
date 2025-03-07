@@ -1,0 +1,21 @@
+syntax ="proto3"; // syntax version 
+
+
+package greet;
+
+option go_package="/greetproto";
+
+//Define gRPC service 
+service GreetService{
+    rpc sayHello(GreetRequest) returns (GreetResponse);
+}
+
+//Define Request Message
+message GreetRequest{
+    string name=1;
+}
+
+//Define GreetResponse
+message GreetResponse{
+    string message=1;
+}
